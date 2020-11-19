@@ -4,7 +4,6 @@ module.exports = {
   url: 'https://retreon.github.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'retreon',
   projectName: 'retreon',
