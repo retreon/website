@@ -3,7 +3,11 @@ module.exports = {
     {
       type: 'category',
       label: 'Introduction',
-      items: ['overview', 'creating-actions'],
+      items: [
+        'overview',
+        'creating-actions',
+        'creating-reducers',
+      ],
     },
   ],
 };
