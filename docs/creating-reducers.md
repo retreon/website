@@ -28,6 +28,16 @@ createReducer(0, (handleAction) => [
 ])
 ```
 
+The above example only changes state, but it also receives an action `payload`. You may be used to receiving the entire action when writing reducers - be aware the only the payload is provided. This is quite intentional. Your reducer should never depend on `action.meta` (that's the realm of middleware) and the action type is implied. What remains is the payload.
+
+```ts
+createReducer(0, (handleAction) => [
+  handleAction(incrementBy, (state, quantity) => {
+    return state + quantity
+  }),
+])
+```
+
 ## Updating State
 Immutably updating state has historically been quite difficult, inefficient, and error prone. You end up making more changes than you intended, you may accidentally mutate state, and many libraries are obtusely verbose.
 
