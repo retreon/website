@@ -28,3 +28,16 @@ const reducer = createReducer({ theme: 'light' }, handleAction => [
 ```
 
 If you prefer to learn by example, take a gander at [the examples directory](https://github.com/retreon/retreon/tree/master/examples), or check out [TodoMVC](https://github.com/retreon/todomvc/) to see a functioning application.
+
+Be aware that retreon is designed for TypeScript, and while it works fine in vanilla JS, you lose a lot of value. All the examples are written assuming you're using TypeScript.
+
+## Installation
+Retreon can be installed through npm.
+
+```bash
+# NPM
+npm install retreon
+
+# Yarn
+yarn add retreon
+```
