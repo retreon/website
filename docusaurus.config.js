@@ -1,7 +1,7 @@
 module.exports = {
   title: 'Retreon',
   tagline: 'A toolkit for building better redux apps.',
-  url: 'https://retreon.github.io',
+  url: 'https://retreon.archetype.foundation',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   favicon: 'img/favicon.ico',
