@@ -100,3 +100,29 @@ createReducer(initialState, (handleAction) => [
 ```
 
 Custom errors are unusual in web development, but that's unfortunate. You can only win by having more descriptive errors. This works particularly well with TypeScript because after the `instanceof` guard, you can safely access any custom fields on the error class. Use this to send arbitrary data to the error handler.
+
+## Async Actions
+You can handle async actions the same way you would synchronous actions. Reducers for async actions are called when they finish, but occasionally you'll want something more immediate: a loading flag, an optimistic patch, an instant deletion. That's why retreon provides a hook for when an action starts, called `handleAction.optimistic(...)`.
+
+import Mermaid from '@theme/Mermaid';
+
+<Mermaid>
+graph LR;
+    handleAction.optimistic-->handleAction;
+    handleAction.optimistic-->handleAction.error;
+</Mermaid>
+
+Optimistic reducers use the action input as the payload (that is, whatever you passed to the action when it was called).
+
+```ts
+createReducer(initialState, (handleAction) => [
+  handleAction.optimistic(fetchUserDetails, (state) => {
+    state.loading = true // The request is in progress.
+  }),
+
+  handleAction(fetchUserDetails, (state, user) => {
+    state.loading = false // The request is finished!
+    state.users[user.id] = user
+  }),
+])
+```
