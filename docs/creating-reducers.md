@@ -52,3 +52,51 @@ createReducer({ count: 0 }, (handleAction) => [
   }),
 ])
 ```
+
+It may look jarring, but you'll get used to it very quickly.
+
+## Error Handling
+If your action creator throws an error, retreon will dispatch an error action. You can listen for error events with `handleAction.error(...)`.
+
+Say you've got an action creator that loads the user's theme preference, light or dark, but you want to handle the case where storage is unavailable. If the action succeeds, you get a theme. If it fails for any reason, you want to gracefully fall back to some default. You would use `handleAction(...)` to successfully set a theme, and `handleAction.error(...)` to use the fallback.
+
+```ts
+createReducer({ theme: null }, (handleAction) => [
+  handleAction(loadTheme, (state, theme) => {
+    state.theme = theme // Success!
+  }),
+
+  handleAction.error(loadTheme, (state) => {
+    post.theme = DEFAULT_THEME // Failure. Use a fallback.
+  }),
+])
+```
+
+All errors are reported. If the action creator fails for any reason, your error reducer will be notified.
+
+### Error Types
+If you're using TypeScript, you may notice that error payloads are always marked `unknown`. That's because `throw` types are inherently unknown - anything can go wrong.
+
+```ts
+createReducer(initialState, (handleAction) => [
+  handleAction.error(fallibleAction, (state, error) => {
+    //                                       ^^^^^ unknown type
+  }),
+])
+```
+
+If you're anticipating a specific error, then use (or create) a custom error class.
+
+```ts
+class MyCustomError extends Error {}
+
+createReducer(initialState, (handleAction) => [
+  handleAction.error(startRecording, (state, error) => {
+    if (error instanceof MyCustomError) {
+      // <your logic here>
+    }
+  }),
+])
+```
+
+Custom errors are unusual in web development, but that's unfortunate. You can only win by having more descriptive errors. This works particularly well with TypeScript because after the `instanceof` guard, you can safely access any custom fields on the error class. Use this to send arbitrary data to the error handler.
