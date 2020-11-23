@@ -3,7 +3,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Introduction',
-      items: ['home'],
+      items: ['overview'],
     },
   ],
 };
