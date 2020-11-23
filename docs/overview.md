@@ -41,3 +41,12 @@ npm install retreon
 # Yarn
 yarn add retreon
 ```
+
+Retreon depends on middleware to implement async actions and error handling. Once it's installed, register it with your redux store:
+
+```ts
+// Wherever you create your redux store...
+import { middleware } from 'retreon'
+
+createStore(reducer, applyMiddleware(middleware))
+```
