@@ -11,6 +11,7 @@ module.exports = {
       items: [
         'creating-actions',
         'creating-reducers',
+        'advanced-usage',
       ],
     },
 
