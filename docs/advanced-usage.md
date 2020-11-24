@@ -81,6 +81,12 @@ createReducer(initialState, (handleAction) => [
 ])
 ```
 
+**Note for TypeScript**: Define generics to allow optimistic and success payloads. The payload parameters are disabled by default.
+
+```ts
+createAction.factory<SuccessPayload, OptimisticPayload>('action-type')
+```
+
 ### Ordering Rules
 To preserve the sanity of your fellow developers, please observe the rules for actions:
 
