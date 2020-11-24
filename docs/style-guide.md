@@ -1,5 +1,4 @@
 ---
-id: style-guide
 title: Style Guide
 ---
 This is a collection of best practices when using Retreon. They aren't required, but highly recommended.

@@ -1,5 +1,4 @@
 ---
-id: advanced-usage
 title: Advanced Usage
 ---
 Retreon offers an escape hatch for situations where `createAction(...)` just doesn't cut it. You should use this sparingly, not because it's bad, but because it takes you off the beaten path.

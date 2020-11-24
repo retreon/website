@@ -1,5 +1,4 @@
 ---
-id: testing-patterns
 title: Testing Patterns
 ---
 :::info

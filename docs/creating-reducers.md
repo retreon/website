@@ -1,5 +1,4 @@
 ---
-id: creating-reducers
 title: Creating Reducers
 ---
 :::caution
