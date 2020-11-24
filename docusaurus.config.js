@@ -18,7 +18,7 @@ module.exports = {
         {
           to: '/creating-actions',
           label: 'API',
-          position: 'left',
+          position: 'right',
         },
         {
           href: 'https://github.com/retreon/retreon',
