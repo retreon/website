@@ -16,6 +16,11 @@ module.exports = {
       },
       items: [
         {
+          to: '/creating-actions',
+          label: 'API',
+          position: 'left',
+        },
+        {
           href: 'https://github.com/retreon/retreon',
           label: 'GitHub',
           position: 'right',
@@ -31,7 +36,7 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           routeBasePath: '/',
           editUrl:
-            'https://github.com/retreon/website/edit/master/website/',
+            'https://github.com/retreon/website/edit/master/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
