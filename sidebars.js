@@ -1,13 +1,22 @@
 module.exports = {
   someSidebar: [
     {
+      type: 'doc',
+      id: 'getting-started',
+    },
+
+    {
       type: 'category',
-      label: 'Introduction',
+      label: 'API',
       items: [
-        'overview',
         'creating-actions',
         'creating-reducers',
       ],
+    },
+
+    {
+      type: 'doc',
+      id: 'style-guide',
     },
   ],
 };
