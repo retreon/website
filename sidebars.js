@@ -19,5 +19,10 @@ module.exports = {
       type: 'doc',
       id: 'style-guide',
     },
+
+    {
+      type: 'doc',
+      id: 'testing-patterns',
+    },
   ],
 };
