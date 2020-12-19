@@ -40,7 +40,7 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           routeBasePath: '/',
           editUrl:
-            'https://github.com/retreon/website/edit/master/',
+            'https://github.com/retreon/website/edit/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
